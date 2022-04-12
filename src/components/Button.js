@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
 const Button = (props) => {
-  const { eventHandler, children, type } = props;
+  const { eventHandler, children, type, oddNo, count } = props;
+
+  useEffect(() => {
+    (async () => {
+      const data = await getData();
+      console.log("Self call fun: ", data);
+    })();
+  }, [oddNo]);
+
+  const getData = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ name: "rishi" });
+      }, 2000);
+    });
+  };
 
   const btnStyle = { backgroundColor: type === "submit" ? "#7076f3" : "#f66464" };
 

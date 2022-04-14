@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useEffect } from "react";
 import Button from "./components/Button";
+import Home from "./components/Home";
 
 const getState = () => {
   return 0;
@@ -46,7 +47,8 @@ function App() {
       <br />
       <br />
 
-      {oddNo ? "Odd" : "Even"}
+      {/* {oddNo ? "Odd" : "Even"} */}
+      <Home />
     </div>
   );
 }

@@ -4,20 +4,20 @@ import PropTypes from "prop-types";
 const Button = (props) => {
   const { eventHandler, children, type, oddNo, count } = props;
 
-  useEffect(() => {
-    (async () => {
-      const data = await getData();
-      console.log("Self call fun: ", data);
-    })();
-  }, [oddNo]);
+  // useEffect(() => {
+  //   (async () => {
+  //     const data = await getData();
+  //     console.log("Self call fun: ", data);
+  //   })();
+  // }, [oddNo]);
 
-  const getData = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({ name: "rishi" });
-      }, 2000);
-    });
-  };
+  // const getData = () => {
+  //   return new Promise((resolve, reject) => {
+  //     setTimeout(() => {
+  //       resolve({ name: "rishi" });
+  //     }, 2000);
+  //   });
+  // };
 
   const btnStyle = { backgroundColor: type === "submit" ? "#7076f3" : "#f66464" };
 

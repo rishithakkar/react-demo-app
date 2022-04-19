@@ -1,39 +1,22 @@
 import "./App.css";
 import React, { useState } from "react";
-import Button from "./components/Button";
+import { Route } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./pages/About";
+import { Switch } from "react-router-dom";
+import Blog from "./pages/Blog";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [name, setName] = useState("");
-
-  const incre = (e) => {
-    setCount(count + 1);
-  };
-
-  const decre = () => {
-    setCount(count - 1);
-  };
-
   return (
     <div className="ml-3">
-      <h1>Counter</h1>
+      <h1>New Application for React Router</h1>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/about" exact component={About} />
+        <Route path="/blog/rishi" component={Blog} />
 
-      <Button type="submit" count={count} eventHandler={decre}>
-        -
-      </Button>
-      {/* <button onClick={() => setCount(count - 2)}>-</button> */}
-      <h3>{count}</h3>
-      <Button type="cancel" eventHandler={incre}>
-        +
-      </Button>
-      {/* <button onClick={incre}>+</button> */}
-
-      <br />
-      <input name={name} onChange={(e) => setName(e.target.value)} type="text" />
-      <br />
-      <br />
-
-      {count % 2 == 0 ? "Even" : "Odd"}
+        <Route component={() => <h1>Page not found!</h1>} />
+      </Switch>
     </div>
   );
 }

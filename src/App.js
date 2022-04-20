@@ -1,19 +1,23 @@
 import "./App.css";
-import React, { useState } from "react";
-import { Route } from "react-router-dom";
+import React from "react";
 import Home from "./components/Home";
 import About from "./pages/About";
-import { Switch } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Blog from "./pages/Blog";
+import Header from "./components/Header";
+import Login from "./pages/Login";
 
 function App() {
   return (
     <div className="ml-3">
-      <h1>New Application for React Router</h1>
+      <Header />
+      <br />
+      <Login />
+      <br />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/about" exact component={About} />
-        <Route path="/blog/rishi" component={Blog} />
+        <Route path="/blog/:blogId?" component={(props) => <Blog name="rishi" {...props} />} />
 
         <Route component={() => <h1>Page not found!</h1>} />
       </Switch>

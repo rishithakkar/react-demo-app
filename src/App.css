@@ -64,3 +64,10 @@
   font-size: 14px;
   background-color: #25ca2e;
 }
+
+.nav {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem 0;
+}

@@ -3,7 +3,7 @@ import React from "react";
 import Header from "./components/Header";
 import GenericRoute from "./routing/GenericRoutes";
 import PrivateRoutes from "./routing/PrivateRoutes";
-import HandleLogin from "./components/HandleLogin";
+import withLogin from "./components/withLogin";
 import AdminRoutes from "./routing/AdminRoutes";
 
 function App(props) {
@@ -20,5 +20,5 @@ function App(props) {
   );
 }
 
-export default HandleLogin(App);
+export default withLogin(App);
 // const EnhancedComponent = higherOrderComponent(WrappedComponent);

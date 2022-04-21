@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import HandleLogin from "../components/HandleLogin";
+import withLogin from "../components/withLogin";
 
 function Login(props) {
   // const LoginSucc = true;
@@ -32,4 +32,4 @@ function Login(props) {
   );
 }
 
-export default HandleLogin(Login);
+export default withLogin(Login);

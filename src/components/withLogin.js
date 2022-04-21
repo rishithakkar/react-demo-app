@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-function HandleLogin(Component) {
+function withLogin(Component) {
   function Login(props) {
     const history = useHistory()
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -18,4 +18,4 @@ function HandleLogin(Component) {
   return Login;
 }
 
-export default HandleLogin;
+export default withLogin;

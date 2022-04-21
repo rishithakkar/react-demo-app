@@ -8,7 +8,7 @@ export default function Header() {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
+        <Link to={{pathname: "/about", state: {token: "abc"}}}>About</Link>
       </li>
       <li>
         <Link to="/blog">Blog</Link>

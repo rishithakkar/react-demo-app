@@ -1,20 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import HandleLogin from "../components/HandleLogin";
 
-export default function Login() {
-  const LoginSucc = true;
+function Login(props) {
+  // const LoginSucc = true;
   const history = useHistory();
 
-  const handleLogin = () => {
-    if (LoginSucc) {
-      history.push({
-        pathname: "/about",
-        state: { loginSuc: true, token: "abvcksbdjfb" },
-      });
-    } else {
-      alert("Wrong credentials");
-    }
-  };
+  // const handleLogin = () => {
+  //   if (LoginSucc) {
+  //     history.push({
+  //       pathname: "/about",
+  //       state: { loginSuc: true, token: "abvcksbdjfb" },
+  //     });
+  //   } else {
+  //     alert("Wrong credentials");
+  //   }
+  // };
+
+  // const { handleLogin } = props;
 
   return (
     <div>
@@ -22,8 +26,10 @@ export default function Login() {
       <br />
       Password: Rishi
       <br />
-      <br />
-      <button onClick={handleLogin}>Login</button>
+      {/* <button onClick={handleLogin}>Login</button> */}
+      <Link to="/about" >About</Link>
     </div>
   );
 }
+
+export default HandleLogin(Login);

@@ -1,28 +1,24 @@
 import "./App.css";
 import React from "react";
-import Home from "./components/Home";
-import About from "./pages/About";
-import { Switch, Route } from "react-router-dom";
-import Blog from "./pages/Blog";
 import Header from "./components/Header";
-import Login from "./pages/Login";
+import GenericRoute from "./routing/GenericRoutes";
+import PrivateRoutes from "./routing/PrivateRoutes";
+import HandleLogin from "./components/HandleLogin";
+import AdminRoutes from "./routing/AdminRoutes";
 
-function App() {
+function App(props) {
+  const { isAuth, handleLogin } = props;
+  console.log("App props: ", props, isAuth);
+
   return (
     <div className="ml-3">
-      <Header />
-      <br />
-      <Login />
-      <br />
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/about" exact component={About} />
-        <Route path="/blog/:blogId?" component={(props) => <Blog name="rishi" {...props} />} />
-
-        <Route component={() => <h1>Page not found!</h1>} />
-      </Switch>
+      <button onClick={handleLogin}>Login</button>
+      {isAuth && <Header />}
+      {!isAuth && <GenericRoute />}
+      <PrivateRoutes isAuth={isAuth} component={AdminRoutes} />
     </div>
   );
 }
 
-export default App;
+export default HandleLogin(App);
+// const EnhancedComponent = higherOrderComponent(WrappedComponent);

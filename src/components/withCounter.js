@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
-function withCounter(Component) {
+function withCounter(Component, num) {
   function Counter() {
     const [count, setCount] = useState(1);
 
     const handleCounter = () => {
-      setCount(count + 1);
+      setCount(count + num);
     };
 
     return <Component count={count} handleCounter={handleCounter} />

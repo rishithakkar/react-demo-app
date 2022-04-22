@@ -11,5 +11,5 @@ function Click(props) {
   );
 }
 
-export default withCounter(Click);
+export default withCounter(Click, 10);
 // const EnhancedComponent = higherOrderComponent(WrappedComponent);

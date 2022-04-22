@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import withCounter from "./withCounter";
 
-function Click() {
-  const [count, setCount] = useState(1);
-
-  const handleCounter = () => {
-    setCount(count + 1);
-  };
+function Click(props) {
 
   return (
     <>
-      <h1>Click Count: {count}</h1>
-      <button onClick={handleCounter}>Increment</button>
+      <h1>Click Count: {props.count}</h1>
+      <button onClick={props.handleCounter}>Increment</button>
     </>
   );
 }
 
-export default Click;
+export default withCounter(Click);
+// const EnhancedComponent = higherOrderComponent(WrappedComponent);

@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import withLogin from "../components/withLogin";
 
 function Login(props) {
   // const LoginSucc = true;
-  const history = useHistory();
+  // const history = useHistory();
 
   // const handleLogin = () => {
   //   if (LoginSucc) {

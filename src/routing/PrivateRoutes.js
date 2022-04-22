@@ -1,11 +1,8 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
-export default function PrivateRoutes({ isAuth, component: Component, ...rest }) {
+export default function PrivateRoutes({ isAuth, component: Component }) {
   return (
-    <Route
-      {...rest}
-      render={(props) => (!isAuth ? <Redirect to="/login" /> : <Component {...props} />)}
-    />
+    <Route render={(props) => (!isAuth ? <Redirect to="/login" /> : <Component {...props} />)} />
   );
 }

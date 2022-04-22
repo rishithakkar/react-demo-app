@@ -12,7 +12,7 @@ function App(props) {
 
   return (
     <div className="ml-3">
-      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogin}>{isAuth ? "Logout" : "Login"}</button>
       {isAuth && <Header />}
       {!isAuth && <GenericRoute />}
       <PrivateRoutes isAuth={isAuth} component={AdminRoutes} />

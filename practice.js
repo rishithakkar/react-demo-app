@@ -72,7 +72,6 @@
 // const add = (a) => (b) => (c) => a + b + c;
 // console.log("add:", add(10)(20)(40));
 
-
 // JS hoisiting
 // console.log('output', hello())
 // console.log('x', x)
@@ -86,3 +85,74 @@
 // var helloES6Fun = () => {
 //     return "Hello from ES6"
 // }
+
+// Object & Array are not immutable data type
+// const arr = [2, 4, 1, 6]
+// console.log('arr', arr)
+// const sortArr = arr.sort();
+// console.log('sortArr', sortArr)
+// console.log('arr', arr)
+
+// const person = {
+//   name: "rishi",
+//   address: {
+//     country: "India",
+//     city: "Ahmedabad",
+//   },
+// };
+
+//#region - Object
+// const newObj = person;
+// newObj.name = 'Earl';
+// console.log('newObj', newObj)
+
+// 1. Object.assign
+// const updatedObj = Object.assign({}, person, {name: 'Mark', surname: 'thakkar'})
+// console.log('updatedObj', updatedObj)
+
+// 2. Spred operator
+// const updatedObj = { ...person, address: { ...person.address }, name: "Mark", surname: "thakkar" };
+// const updatedObj = _.cloneDeep(person)
+// updatedObj.address.city = "Nadiad";
+
+// console.log("person", person);
+// console.log("updatedObj", updatedObj);
+
+// Strings and numbers are immutable data type
+// let fName = "rishi";
+
+// console.log('Name', fName.toUpperCase())
+// console.log('fName', fName)
+//#endregion - Object
+
+//#region - Array
+// const nums = [1, 2, 3, 5, 25, 20, 15]
+// const newNums = [...nums, 4]; // Adding
+// newNums[1] = 5
+// const thirdIdx = nums.indexOf(3) + 1 
+// console.log('thirdIdx', thirdIdx)
+
+// Adding
+// const newNums = [
+//     ...nums.slice(0, thirdIdx),
+//     4,
+//     ...nums.slice(thirdIdx)
+// ]
+// console.log('nums', nums)
+// console.log('newNums', newNums)
+
+// Delete
+// const newAry = nums.filter((n) => n > 18)
+// console.log('newAry', newAry)
+
+// Updating
+// const updatedArr = nums.map((n) => n === 2 ? 10 : n)
+// const newArr = nums.map((n) => {
+//     if(n === 2) return 10
+//     else return n
+// })
+
+// console.log('updatedArr', updatedArr)
+// console.log('nums', nums)
+//#endregion - Array
+
